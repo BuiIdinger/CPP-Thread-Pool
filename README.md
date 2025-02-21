@@ -10,7 +10,7 @@ A simple C++ thread pool class.
 #include <iostream>
 
 int main() {
-  ThreadPool threadPool(std::thread::hardware_concurrency()); // 
+  ThreadPool threadPool(std::thread::hardware_concurrency());
 
   threadPool.enqueueTask([]() {
     while (true) {
