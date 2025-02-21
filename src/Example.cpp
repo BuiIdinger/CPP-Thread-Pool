@@ -1,9 +1,3 @@
-# C++ Thread Pool
-A simple C++ thread pool class.
-
-# Example
-
-```cpp
 #include "ThreadPool.h"
 #include <thread>
 #include <chrono>
@@ -35,10 +29,4 @@ int main() {
 
   return 0;
 }
-```
 
-# Build
-
-To build you only need CMake
-
-mkdir build && cd build && cmake .. &&
