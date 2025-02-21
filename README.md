@@ -39,6 +39,33 @@ int main() {
 
 # Build
 
-To build you only need CMake
+To build the library, you need CMake.
 
-mkdir build && cd build && cmake .. &&
+Build:
+- mkdir build && cd build
+- cmake .. && make
+
+Install the library:
+- sudo make install
+
+# Example of linking with a CMakeLists.txt
+
+```
+cmake_minimum_required(VERSION 3.10)
+
+project(MyProject)
+
+# Set C++ configs
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Add executable
+add_executable(MyProject main.cpp)
+
+# Find ThreadPool package
+find_package(ThreadPool REQUIRED)
+target_include_directories(MyProject PRIVATE /usr/local/include)
+target_link_libraries(MyProject PRIVATE ThreadPool)
+target_link_directories(MyProject PRIVATE /usr/local/lib)
+```

@@ -1,0 +1,10 @@
+set(TARGET_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(TARGET_LIBRARIES ThreadPool)
+
+# Create and install the ThreadPoolConfig.cmake file
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/ThreadPoolConfig.cmake.in" "${CMAKE_BINARY_DIR}/ThreadPoolConfig.cmake" @ONLY)
+install(FILES "${CMAKE_BINARY_DIR}/ThreadPoolConfig.cmake" DESTINATION lib/cmake/ThreadPool)
+
+# Install the version config file
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/ThreadPoolConfigVersion.cmake.in" "${CMAKE_BINARY_DIR}/ThreadPoolConfigVersion.cmake" @ONLY)
+install(FILES "${CMAKE_BINARY_DIR}/ThreadPoolConfigVersion.cmake" DESTINATION lib/cmake/ThreadPool)
